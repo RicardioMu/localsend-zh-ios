@@ -608,7 +608,7 @@
     "errorPrefix": "Error",
     "booleanTrue": "true",
     "booleanFalse": "false",
-    "defaultValue": "Default",
+    "versionLabel": "Version: {version}",
     "translationCredit": "Translation by HaoH"
   }
 }

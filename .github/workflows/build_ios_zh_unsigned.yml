@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: macos-15
     timeout-minutes: 60
+    env:
+      # connectivity_plus 7.3.1 references iOS 26 Network.framework APIs.
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
     defaults:
       run:
         shell: bash

@@ -15,7 +15,9 @@ class ChangelogPage extends StatelessWidget {
         title: Text(t.changelogPage.title),
       ),
       body: FutureBuilder(
-        future: rootBundle.loadString(Assets.changelog), // ignore: discarded_futures
+        future: rootBundle.loadString(
+          LocaleSettings.currentLocale == AppLocale.zhCn ? 'assets/CHANGELOG_ZH_CN.md' : Assets.changelog,
+        ), // ignore: discarded_futures
         builder: (context, data) {
           if (!data.hasData) {
             return Container();

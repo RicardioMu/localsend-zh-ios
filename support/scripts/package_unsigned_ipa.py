@@ -20,7 +20,11 @@ def main():
     subprocess.run(["lipo", "-verify_arch", "arm64", str(app / info["CFBundleExecutable"])], check=True)
     if "iPhoneOS" not in info.get("CFBundleSupportedPlatforms", []):
         raise SystemExit("This app is not an iPhoneOS device build.")
-    for relative in ["PlugIns/ShareExtension.appex", "zh-Hans.lproj/InfoPlist.strings"]:
+    for relative in [
+        "PlugIns/ShareExtension.appex",
+        "zh-Hans.lproj/InfoPlist.strings",
+        "Frameworks/App.framework/flutter_assets/assets/CHANGELOG_ZH_CN.md",
+    ]:
         if not (app / relative).exists():
             raise SystemExit(f"Required bundled component missing: {relative}")
     if (app / "_CodeSignature").exists():

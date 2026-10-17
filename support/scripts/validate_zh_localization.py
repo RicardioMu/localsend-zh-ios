@@ -58,6 +58,19 @@ def main():
         raise SystemExit("\n".join(errors))
     print(f"Validated {len(chinese)} Chinese strings: complete coverage, matching placeholders and references.")
 
+    source_notes = (ROOT / "app/assets/CHANGELOG.md").read_text(encoding="utf-8")
+    chinese_notes = (ROOT / "app/assets/CHANGELOG_ZH_CN.md").read_text(encoding="utf-8")
+    for pattern, label in [(r"^## \d.*$", "version headings"), (r"@[\w-]+", "contributor credits")]:
+        if collections.Counter(re.findall(pattern, source_notes, re.MULTILINE)) != collections.Counter(
+            re.findall(pattern, chinese_notes, re.MULTILINE)
+        ):
+            raise SystemExit(f"Changelog has mismatched {label}.")
+    source_count = len(re.findall(r"^- ", source_notes, re.MULTILINE))
+    chinese_count = len(re.findall(r"^- ", chinese_notes, re.MULTILINE))
+    if source_count != chinese_count:
+        raise SystemExit("Changelog entry count differs from the original.")
+    print(f"Validated {chinese_count} Chinese changelog entries with original versions and contributor credits.")
+
 
 if __name__ == "__main__":
     main()

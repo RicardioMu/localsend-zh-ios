@@ -607,7 +607,7 @@
     "errorPrefix": "错误",
     "booleanTrue": "是",
     "booleanFalse": "否",
-    "defaultValue": "默认",
+    "versionLabel": "版本：{version}",
     "translationCredit": "翻译 by HaoH"
   }
 }

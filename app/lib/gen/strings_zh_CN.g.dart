@@ -912,7 +912,7 @@ class Translations$customUi$zh_CN extends Translations$customUi$en {
   @override
   String get booleanFalse => '否';
   @override
-  String get defaultValue => '默认';
+  String versionLabel({required Object version}) => '版本：${version}';
   @override
   String get translationCredit => '翻译 by HaoH';
 }

@@ -111,6 +111,7 @@ flutter:
   assets:
     - assets/img/
     - assets/CHANGELOG.md
+    - assets/CHANGELOG_ZH_CN.md
 
 flutter_gen:
   line_length: 150

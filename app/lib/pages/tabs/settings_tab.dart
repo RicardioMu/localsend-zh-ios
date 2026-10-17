@@ -587,7 +587,7 @@ class SettingsTab extends StatelessWidget {
                 .watch(versionProvider)
                 .maybeWhen(
                   data: (version) => Text(
-                    'Version: ${version.combinedString}',
+                    t.customUi.versionLabel(version: version.combinedString),
                     textAlign: TextAlign.center,
                   ),
                   orElse: () => Container(),

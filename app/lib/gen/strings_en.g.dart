@@ -1049,8 +1049,8 @@ class Translations$customUi$en {
   /// en: 'false'
   String get booleanFalse => 'false';
 
-  /// en: 'Default'
-  String get defaultValue => 'Default';
+  /// en: 'Version: {version}'
+  String versionLabel({required Object version}) => 'Version: ${version}';
 
   /// en: 'Translation by HaoH'
   String get translationCredit => 'Translation by HaoH';
