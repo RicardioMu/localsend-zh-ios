@@ -23,6 +23,13 @@ import 'package:routerino/routerino.dart';
 import 'package:system_date_time_format/system_date_time_format.dart';
 
 Future<void> main(List<String> args) async {
+  // Load the custom build's language before initialization so startup errors
+  // are localized too. Saved language preferences are restored by preInit.
+  WidgetsFlutterBinding.ensureInitialized();
+  const defaultLocale = String.fromEnvironment('LOCALSEND_DEFAULT_LOCALE');
+  if (defaultLocale.isNotEmpty) {
+    await LocaleSettings.setLocaleRaw(defaultLocale);
+  }
   final RefenaContainer container;
   try {
     container = await preInit(args);

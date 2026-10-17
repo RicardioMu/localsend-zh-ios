@@ -1,0 +1,6 @@
+"CFBundleDisplayName" = "LocalSend";
+"NSPhotoLibraryUsageDescription" = "Select photos and videos to share with nearby devices.";
+"NSPhotoLibraryAddUsageDescription" = "Save received photos and videos to your photo library.";
+"NSLocalNetworkUsageDescription" = "Find nearby devices and transfer files over your local network.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Read Wi-Fi network information to help nearby devices connect.";
+"NSLocationWhenInUseUsageDescription" = "Read Wi-Fi network information to help nearby devices connect.";

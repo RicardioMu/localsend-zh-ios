@@ -1,0 +1,6 @@
+"CFBundleDisplayName" = "LocalSend";
+"NSPhotoLibraryUsageDescription" = "选择照片和视频，分享给附近的设备。";
+"NSPhotoLibraryAddUsageDescription" = "将收到的照片和视频保存到相册。";
+"NSLocalNetworkUsageDescription" = "查找同一局域网中的设备，并与其传输文件。";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "读取 Wi-Fi 网络信息，帮助附近设备建立连接。";
+"NSLocationWhenInUseUsageDescription" = "读取 Wi-Fi 网络信息，帮助附近设备建立连接。";

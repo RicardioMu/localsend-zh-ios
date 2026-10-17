@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localsend_app/gen/strings.g.dart';
 import 'package:localsend_app/util/native/platform_check.dart';
 import 'package:localsend_app/util/native/tray_helper.dart';
 import 'package:logging/logging.dart';
@@ -29,7 +30,9 @@ void showInitErrorApp({
     ),
   );
 
-  await showFromTray();
+  if (checkPlatformIsDesktop()) {
+    await showFromTray();
+  }
 }
 
 class _ErrorApp extends StatefulWidget {
@@ -53,17 +56,17 @@ class _ErrorAppState extends State<_ErrorApp> {
   void initState() {
     super.initState();
 
-    _controller.text = 'Error: ${widget.error}\n\n${widget.stackTrace}';
+    _controller.text = '${t.customUi.errorPrefix}: ${widget.error}\n\n${widget.stackTrace}';
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       final info = await PackageInfo.fromPlatform();
-      _controller.text = 'LocalSend ${info.version} (${info.buildNumber})\n\nError: ${widget.error}\n\n${widget.stackTrace}';
+      _controller.text = 'LocalSend ${info.version} (${info.buildNumber})\n\n${t.customUi.errorPrefix}: ${widget.error}\n\n${widget.stackTrace}';
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'LocalSend: Error',
+      title: t.customUi.initializationError,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: TextFormField(

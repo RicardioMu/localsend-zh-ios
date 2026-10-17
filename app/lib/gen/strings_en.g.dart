@@ -73,6 +73,7 @@ class Translations with BaseTranslations<AppLocale, Translations> {
   late final Translations$tray$en tray = Translations$tray$en.internal(_root);
   late final Translations$web$en web = Translations$web$en.internal(_root);
   late final Translations$assetPicker$en assetPicker = Translations$assetPicker$en.internal(_root);
+  late final Translations$customUi$en customUi = Translations$customUi$en.internal(_root);
 }
 
 // Path: general
@@ -945,6 +946,114 @@ class Translations$assetPicker$en {
 
   /// en: 'count'
   String get sUnitAssetCountLabel => 'count';
+}
+
+// Path: customUi
+class Translations$customUi$en {
+  Translations$customUi$en.internal(this._root);
+
+  final Translations _root; // ignore: unused_field
+
+  // Translations
+
+  /// en: 'Homepage'
+  String get homepage => 'Homepage';
+
+  /// en: 'Source Code (GitHub)'
+  String get sourceCodeGithub => 'Source Code (GitHub)';
+
+  /// en: 'Source Code (Codeberg)'
+  String get sourceCodeCodeberg => 'Source Code (Codeberg)';
+
+  /// en: 'Apache License 2.0'
+  String get apacheLicense => 'Apache License 2.0';
+
+  /// en: 'License Notices'
+  String get licenseNotices => 'License Notices';
+
+  /// en: 'Debugging'
+  String get debugging => 'Debugging';
+
+  /// en: 'Debug Mode'
+  String get debugMode => 'Debug Mode';
+
+  /// en: 'Portable Mode'
+  String get portableMode => 'Portable Mode';
+
+  /// en: 'Executable Path'
+  String get executablePath => 'Executable Path';
+
+  /// en: 'Working Directory'
+  String get workingDirectory => 'Working Directory';
+
+  /// en: 'Settings Path'
+  String get settingsPath => 'Settings Path';
+
+  /// en: 'App Arguments'
+  String get appArguments => 'App Arguments';
+
+  /// en: 'More'
+  String get more => 'More';
+
+  /// en: 'Security'
+  String get security => 'Security';
+
+  /// en: 'Discovery'
+  String get discovery => 'Discovery';
+
+  /// en: 'HTTP Logs'
+  String get httpLogs => 'HTTP Logs';
+
+  /// en: 'Refena Tracing'
+  String get refenaTracing => 'Refena Tracing';
+
+  /// en: 'Clear settings'
+  String get clearSettings => 'Clear settings';
+
+  /// en: 'Security Debugging'
+  String get securityDebugging => 'Security Debugging';
+
+  /// en: 'Reset'
+  String get reset => 'Reset';
+
+  /// en: 'Certificate SHA-256 (fingerprint)'
+  String get certificateFingerprint => 'Certificate SHA-256 (fingerprint)';
+
+  /// en: 'Certificate'
+  String get certificate => 'Certificate';
+
+  /// en: 'Private Key'
+  String get privateKey => 'Private Key';
+
+  /// en: 'Public Key'
+  String get publicKey => 'Public Key';
+
+  /// en: 'Discovery Debugging'
+  String get discoveryDebugging => 'Discovery Debugging';
+
+  /// en: 'Announce'
+  String get announce => 'Announce';
+
+  /// en: 'Clear'
+  String get clear => 'Clear';
+
+  /// en: 'LocalSend: Error'
+  String get initializationError => 'LocalSend: Error';
+
+  /// en: 'Error'
+  String get errorPrefix => 'Error';
+
+  /// en: 'true'
+  String get booleanTrue => 'true';
+
+  /// en: 'false'
+  String get booleanFalse => 'false';
+
+  /// en: 'Default'
+  String get defaultValue => 'Default';
+
+  /// en: 'Translation by HaoH'
+  String get translationCredit => 'Translation by HaoH';
 }
 
 // Path: receiveTab.infoBox

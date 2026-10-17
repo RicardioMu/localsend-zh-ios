@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:localsend_app/gen/strings.g.dart';
 import 'package:localsend_app/pages/debug/discovery_debug_page.dart';
 import 'package:localsend_app/pages/debug/http_logs_page.dart';
 import 'package:localsend_app/pages/debug/security_debug_page.dart';
@@ -24,34 +25,34 @@ class DebugPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Debugging'),
+        title: Text(t.customUi.debugging),
       ),
       body: ListView(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 30),
         children: [
           DebugEntry(
-            name: 'Debug Mode',
-            value: kDebugMode.toString(),
+            name: t.customUi.debugMode,
+            value: kDebugMode ? t.customUi.booleanTrue : t.customUi.booleanFalse,
           ),
           DebugEntry(
-            name: 'Portable Mode',
-            value: portableMode ? 'true' : 'false',
+            name: t.customUi.portableMode,
+            value: portableMode ? t.customUi.booleanTrue : t.customUi.booleanFalse,
           ),
           DebugEntry(
-            name: 'Executable Path',
+            name: t.customUi.executablePath,
             value: Platform.resolvedExecutable,
           ),
           DebugEntry(
-            name: 'Working Directory',
+            name: t.customUi.workingDirectory,
             value: Directory.current.path,
           ),
           if (store is SharedPreferencesFile)
             DebugEntry(
-              name: 'Settings Path',
+              name: t.customUi.settingsPath,
               value: store.getPath(),
             ),
           DebugEntry(
-            name: 'App Arguments',
+            name: t.customUi.appArguments,
             value: appArguments.isEmpty ? null : appArguments.map((e) => '"$e"').join(' '),
           ),
           DebugEntry(
@@ -59,7 +60,7 @@ class DebugPage extends StatelessWidget {
             value: Platform.version,
           ),
           const SizedBox(height: 20),
-          const Text('More', style: DebugEntry.headerStyle),
+          Text(t.customUi.more, style: DebugEntry.headerStyle),
           const SizedBox(height: 5),
           Wrap(
             spacing: 10,
@@ -67,24 +68,24 @@ class DebugPage extends StatelessWidget {
             children: [
               FilledButton(
                 onPressed: () async => context.push(() => const SecurityDebugPage()),
-                child: const Text('Security'),
+                child: Text(t.customUi.security),
               ),
               FilledButton(
                 onPressed: () async => context.push(() => const DiscoveryDebugPage()),
-                child: const Text('Discovery'),
+                child: Text(t.customUi.discovery),
               ),
               FilledButton(
                 onPressed: () async => context.push(() => const HttpLogsPage()),
-                child: const Text('HTTP Logs'),
+                child: Text(t.customUi.httpLogs),
               ),
               if (kDebugMode)
                 FilledButton(
                   onPressed: () async => context.push(() => const RefenaTracingPage()),
-                  child: const Text('Refena Tracing'),
+                  child: Text(t.customUi.refenaTracing),
                 ),
               FilledButton(
                 onPressed: () async => await context.ref.read(persistenceProvider).clear(),
-                child: const Text('Clear settings'),
+                child: Text(t.customUi.clearSettings),
               ),
             ],
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:localsend_app/gen/strings.g.dart';
 import 'package:localsend_app/provider/logging/http_logs_provider.dart';
 import 'package:localsend_app/widget/copyable_text.dart';
 import 'package:localsend_app/widget/responsive_list_view.dart';
@@ -15,7 +16,7 @@ class HttpLogsPage extends StatelessWidget {
     final logs = context.ref.watch(httpLogsProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HTTP Logs'),
+        title: Text(t.customUi.httpLogs),
       ),
       body: ResponsiveListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -24,7 +25,7 @@ class HttpLogsPage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () => context.ref.notifier(httpLogsProvider).clear(),
-                child: const Text('Clear'),
+                child: Text(t.customUi.clear),
               ),
             ],
           ),

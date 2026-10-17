@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localsend_app/gen/strings.g.dart';
 import 'package:localsend_app/provider/security_provider.dart';
 import 'package:localsend_app/widget/debug_entry.dart';
 import 'package:localsend_app/widget/responsive_list_view.dart';
@@ -12,7 +13,7 @@ class SecurityDebugPage extends StatelessWidget {
     final securityContext = context.ref.watch(securityProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Security Debugging'),
+        title: Text(t.customUi.securityDebugging),
       ),
       body: ResponsiveListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -22,24 +23,24 @@ class SecurityDebugPage extends StatelessWidget {
             children: [
               FilledButton(
                 onPressed: () async => await context.ref.redux(securityProvider).dispatchAsync(ResetSecurityContextAction()),
-                child: const Text('Reset'),
+                child: Text(t.customUi.reset),
               ),
             ],
           ),
           DebugEntry(
-            name: 'Certificate SHA-256 (fingerprint)',
+            name: t.customUi.certificateFingerprint,
             value: securityContext.certificateHash,
           ),
           DebugEntry(
-            name: 'Certificate',
+            name: t.customUi.certificate,
             value: securityContext.certificate,
           ),
           DebugEntry(
-            name: 'Private Key',
+            name: t.customUi.privateKey,
             value: securityContext.privateKey,
           ),
           DebugEntry(
-            name: 'Public Key',
+            name: t.customUi.publicKey,
             value: securityContext.publicKey,
           ),
         ],

@@ -1,0 +1,80 @@
+name: Build Chinese iOS IPA (unsigned)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Install pinned Flutter through FVM
+        env:
+          FVM_USE_GIT_CACHE: "false"
+        run: |
+          dart pub global activate fvm
+          fvm install
+          fvm flutter --version
+          xcodebuild -version
+
+      - name: Install pinned Rust with iOS target
+        run: |
+          RUST_VERSION=$(python3 -c 'import tomllib; print(tomllib.load(open("rust-toolchain.toml", "rb"))["toolchain"]["channel"])')
+          rustup toolchain install "$RUST_VERSION" --profile minimal --target aarch64-apple-ios
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            . -> target
+
+      - name: Validate Chinese sources and iOS resources
+        run: |
+          python3 support/scripts/validate_zh_localization.py
+          plutil -lint app/ios/Runner.xcodeproj/project.pbxproj
+          plutil -lint app/ios/Runner/en.lproj/InfoPlist.strings
+          plutil -lint app/ios/Runner/zh-Hans.lproj/InfoPlist.strings
+
+      - name: Resolve Flutter dependencies and generate translations
+        working-directory: app
+        run: |
+          fvm flutter pub get --enforce-lockfile
+          fvm dart run slang
+
+      - name: Analyze and test localization
+        working-directory: app
+        run: |
+          fvm flutter analyze
+          fvm flutter test test/unit/i18n_test.dart
+
+      - name: Build unsigned iPhone app
+        working-directory: app
+        run: |
+          fvm flutter build ios --release --no-codesign --dart-define=LOCALSEND_DEFAULT_LOCALE=zh-CN
+
+      - name: Verify and package unsigned IPA
+        run: |
+          python3 support/scripts/package_unsigned_ipa.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LocalSend-zh-CN-unsigned-ipa
+          path: |
+            dist/*.ipa
+            dist/SHA256SUMS.txt
+            dist/build-info.json
+          if-no-files-found: error
+          retention-days: 14

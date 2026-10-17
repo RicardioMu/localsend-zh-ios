@@ -5,6 +5,9 @@
 
 # Rust workspace build output
 /target/
+/dist/
+/.codex-tools/
+/LUNA_TRANSLATION_TASK.md
 
 # Linux AppImage
 /app/AppDir

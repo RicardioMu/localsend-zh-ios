@@ -95,6 +95,8 @@ class TranslationsZhCn extends Translations with BaseTranslations<AppLocale, Tra
   late final Translations$web$zh_CN web = Translations$web$zh_CN.internal(_root);
   @override
   late final Translations$assetPicker$zh_CN assetPicker = Translations$assetPicker$zh_CN.internal(_root);
+  @override
+  late final Translations$customUi$zh_CN customUi = Translations$customUi$zh_CN.internal(_root);
 }
 
 // Path: general
@@ -155,13 +157,13 @@ class Translations$general$zh_CN extends Translations$general$en {
   @override
   String get queue => '队列';
   @override
-  String get quickSave => '自动保存';
+  String get quickSave => '自动接收';
   @override
-  String get quickSaveFromFavorites => '自动保存来自“收藏夹(白名单)”设备的文件';
+  String get quickSaveFromFavorites => '自动接收收藏设备的文件';
   @override
-  String get renamed => '重命名成功';
+  String get renamed => '已重命名';
   @override
-  String get reset => '重置';
+  String get reset => '撤销更改';
   @override
   String get restart => '重启';
   @override
@@ -213,13 +215,13 @@ class Translations$sendTab$zh_CN extends Translations$sendTab$en {
   @override
   late final Translations$sendTab$picker$zh_CN picker = Translations$sendTab$picker$zh_CN.internal(_root);
   @override
-  String get shareIntentInfo => '你也可以通过移动设备中的“分享”功能更简单地发送文件。';
+  String get shareIntentInfo => '也可以使用手机的“分享”功能选择要发送的文件。';
   @override
   String get nearbyDevices => '附近的设备';
   @override
-  String get thisDevice => '这台设备';
+  String get thisDevice => '本机';
   @override
-  String get scan => '扫描设备';
+  String get scan => '搜索设备';
   @override
   String get manualSending => '手动发送';
   @override
@@ -227,11 +229,11 @@ class Translations$sendTab$zh_CN extends Translations$sendTab$en {
   @override
   late final Translations$sendTab$sendModes$zh_CN sendModes = Translations$sendTab$sendModes$zh_CN.internal(_root);
   @override
-  String get sendModeHelp => '提示';
+  String get sendModeHelp => '模式说明';
   @override
-  String get help => '请确保目标连接到同一个 Wi‑Fi 网络。';
+  String get help => '请确保接收设备也连接到同一个 Wi-Fi 网络。';
   @override
-  String get placeItems => '列出要分享的项目。';
+  String get placeItems => '添加要分享的文件或文字。';
 }
 
 // Path: settingsTab
@@ -267,7 +269,7 @@ class Translations$troubleshootPage$zh_CN extends Translations$troubleshootPage$
   @override
   String get title => '故障排除';
   @override
-  String get subTitle => '应用没有按预期工作？您可以在这里找到常用解决方案。';
+  String get subTitle => '无法发现设备或传输文件？可以尝试以下解决方法。';
   @override
   String get solution => '解决方案：';
   @override
@@ -290,13 +292,13 @@ class Translations$networkInterfacesPage$zh_CN extends Translations$networkInter
   @override
   String get title => '网络接口';
   @override
-  String get info => '默认情况下，LocalSend 使用所有可用的网络接口。您可以在此处排除不需要的网络接口。您需要重新启动服务器以应用更改。';
+  String get info => 'LocalSend 默认使用所有可用的网络接口。可以在这里排除不需要的接口，更改将在重启传输服务后生效。';
   @override
   String get preview => '预览';
   @override
-  String get whitelist => '白名单';
+  String get whitelist => '允许列表';
   @override
-  String get blacklist => '黑名单';
+  String get blacklist => '排除列表';
 }
 
 // Path: receiveHistoryPage
@@ -307,13 +309,13 @@ class Translations$receiveHistoryPage$zh_CN extends Translations$receiveHistoryP
 
   // Translations
   @override
-  String get title => '历史';
+  String get title => '接收记录';
   @override
-  String get openFolder => '打开目录';
+  String get openFolder => '打开文件夹';
   @override
   String get deleteHistory => '删除历史记录';
   @override
-  String get empty => '无历史记录。';
+  String get empty => '暂无接收记录。';
   @override
   late final Translations$receiveHistoryPage$entryActions$zh_CN entryActions = Translations$receiveHistoryPage$entryActions$zh_CN.internal(_root);
 }
@@ -343,7 +345,7 @@ class Translations$selectedFilesPage$zh_CN extends Translations$selectedFilesPag
 
   // Translations
   @override
-  String get deleteAll => '全部删除';
+  String get deleteAll => '清空选择';
 }
 
 // Path: deviceDetailsPage
@@ -379,7 +381,7 @@ class Translations$verifyPage$zh_CN extends Translations$verifyPage$en {
   @override
   String get text => '文本';
   @override
-  String get question => '在另一台设备上显示的内容相同吗？';
+  String get question => '两台设备显示的内容是否一致？';
 }
 
 // Path: receivePage
@@ -392,13 +394,13 @@ class Translations$receivePage$zh_CN extends Translations$receivePage$en {
   @override
   String subTitle({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('zh'))(
     n,
-    one: '想要发送给你一个文件',
-    other: '想要发送给你 ${n} 个文件',
+    one: '想向你发送 1 个文件',
+    other: '想向你发送 ${n} 个文件',
   );
   @override
-  String get subTitleMessage => '发送给你了一条消息：';
+  String get subTitleMessage => '向你发送了一条消息：';
   @override
-  String get subTitleLink => '发送给你了一个链接：';
+  String get subTitleLink => '向你发送了一个链接：';
   @override
   String get canceled => '发送者取消了请求。';
 }
@@ -411,15 +413,15 @@ class Translations$receiveOptionsPage$zh_CN extends Translations$receiveOptionsP
 
   // Translations
   @override
-  String get title => '设置';
+  String get title => '接收选项';
   @override
   String get destination => _root.settingsTab.receive.destination;
   @override
-  String get appDirectory => '(LocalSend 文件夹)';
+  String get appDirectory => '（LocalSend 文件夹）';
   @override
   String get saveToGallery => _root.settingsTab.receive.saveToGallery;
   @override
-  String get saveToGalleryOff => '由于分享内容中存在文件夹，已自动关闭。';
+  String get saveToGalleryOff => '分享内容包含文件夹，已关闭保存到相册。';
 }
 
 // Path: sendPage
@@ -432,7 +434,7 @@ class Translations$sendPage$zh_CN extends Translations$sendPage$en {
   @override
   String calculatingChecksum({required Object curr, required Object n}) => '正在计算校验和（${curr} / ${n}）';
   @override
-  String get waiting => '等待响应中……';
+  String get waiting => '正在等待对方响应…';
   @override
   String get rejected => '对方拒绝了请求。';
   @override
@@ -468,13 +470,13 @@ class Translations$webSharePage$zh_CN extends Translations$webSharePage$en {
 
   // Translations
   @override
-  String get title => '分享为链接';
+  String get title => '通过链接分享';
   @override
-  String get loading => '正在启动服务器……';
+  String get loading => '正在启动分享服务…';
   @override
-  String get stopping => '正在停止服务器……';
+  String get stopping => '正在停止分享服务…';
   @override
-  String get error => '在启动服务器过程中发生了错误。';
+  String get error => '无法启动分享服务。';
   @override
   String openLink({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('zh'))(
     n,
@@ -484,17 +486,17 @@ class Translations$webSharePage$zh_CN extends Translations$webSharePage$en {
   @override
   String get requests => '请求';
   @override
-  String get noRequests => '尚无请求。';
+  String get noRequests => '暂无下载请求。';
   @override
   String get encryption => _root.settingsTab.network.encryption;
   @override
   String get autoAccept => '自动接受请求';
   @override
-  String get requirePin => '启用 PIN 密码';
+  String get requirePin => '需要 PIN 码';
   @override
-  String pinHint({required Object pin}) => 'PIN 为 “${pin}”';
+  String pinHint({required Object pin}) => 'PIN 码：${pin}';
   @override
-  String get encryptionHint => 'LocalSend 使用自签名证书。您需要在浏览器中允许它。';
+  String get encryptionHint => 'LocalSend 使用自签名证书，需要在浏览器中确认信任后才能访问。';
   @override
   String pendingRequests({required Object n}) => '待处理请求：${n}';
 }
@@ -521,17 +523,17 @@ class Translations$aboutPage$zh_CN extends Translations$aboutPage$en {
   String get title => '关于 LocalSend';
   @override
   List<String> get description => [
-    'LocalSend 是一款免费的开源应用程序，可让您通过本地网络与附近的设备安全地分享文件和信息，而无需互联网连接。',
-    '本程序可在 Android、iOS、macOS、Windows 和 Linux 上使用。您可以在官方主页找到所有下载选项。',
+    'LocalSend 是一款免费开源应用，可通过局域网与附近设备安全地分享文件和消息，无需连接互联网。',
+    '支持 Android、iOS、macOS、Windows 和 Linux。各平台下载地址请见官方网站。',
   ];
   @override
   String get author => '作者';
   @override
   String get contributors => '贡献者';
   @override
-  String get packagers => '打包者';
+  String get packagers => '打包维护者';
   @override
-  String get translators => '翻译者';
+  String get translators => '翻译贡献者';
 }
 
 // Path: donationPage
@@ -544,11 +546,11 @@ class Translations$donationPage$zh_CN extends Translations$donationPage$en {
   @override
   String get title => '捐赠';
   @override
-  String get info => 'LocalSend 免费、开源、无广告。如果您喜欢这款应用程序，可以捐款支持开发。';
+  String get info => 'LocalSend 免费、开源、无广告。如果喜欢这款应用，可以捐赠支持后续开发。';
   @override
   String donate({required Object amount}) => '捐款 ${amount}';
   @override
-  String get thanks => '非常感谢您的支持！';
+  String get thanks => '感谢你的支持！';
   @override
   String get restore => '恢复购买';
 }
@@ -572,7 +574,7 @@ class Translations$whatsNewPage$zh_CN extends Translations$whatsNewPage$en {
 
   // Translations
   @override
-  String title({required Object version}) => '${version} 中的新增功能';
+  String title({required Object version}) => '${version} 更新内容';
   @override
   late final Translations$whatsNewPage$changes$zh_CN changes = Translations$whatsNewPage$changes$zh_CN.internal(_root);
 }
@@ -760,9 +762,9 @@ class Translations$web$zh_CN extends Translations$web$en {
   @override
   String get waiting => _root.sendPage.waiting;
   @override
-  String get enterPin => '输入 PIN';
+  String get enterPin => '输入 PIN 码';
   @override
-  String get invalidPin => 'PIN 无效';
+  String get invalidPin => 'PIN 码不正确';
   @override
   String get tooManyAttempts => '尝试次数过多';
   @override
@@ -793,29 +795,29 @@ class Translations$assetPicker$zh_CN extends Translations$assetPicker$en {
   @override
   String get loadFailed => '加载失败';
   @override
-  String get original => '原文件';
+  String get original => '原图';
   @override
   String get preview => '预览';
   @override
   String get select => '选择';
   @override
-  String get emptyList => '列表为空';
+  String get emptyList => '暂无照片或视频';
   @override
-  String get unSupportedAssetType => '不支持该文件格式';
+  String get unSupportedAssetType => '不支持此文件类型';
   @override
   String get unableToAccessAll => '无法访问设备上的所有文件';
   @override
-  String get viewingLimitedAssetsTip => '应用程序仅能查看您允许的文件和相册。';
+  String get viewingLimitedAssetsTip => '当前仅显示已授权访问的照片、视频和相册。';
   @override
-  String get changeAccessibleLimitedAssets => '点击以更改可访问文件范围';
+  String get changeAccessibleLimitedAssets => '更改可访问的照片和视频';
   @override
-  String get accessAllTip => '应用程序只能访问设备上的部分文件，请转到系统设置并允许该应用访问设备上的所有媒体文件。';
+  String get accessAllTip => 'LocalSend 目前只能访问部分照片和视频。若要选择更多内容，请前往系统设置，允许访问全部照片。';
   @override
-  String get goToSystemSettings => '转到系统设置';
+  String get goToSystemSettings => '前往系统设置';
   @override
-  String get accessLimitedAssets => '继续受限访问';
+  String get accessLimitedAssets => '仅使用已授权的照片';
   @override
-  String get accessiblePathName => '可访问的文件';
+  String get accessiblePathName => '已授权的照片和视频';
   @override
   String get sTypeAudioLabel => '音频';
   @override
@@ -831,13 +833,88 @@ class Translations$assetPicker$zh_CN extends Translations$assetPicker$en {
   @override
   String get sActionSelectHint => '选择';
   @override
-  String get sActionSwitchPathLabel => '更改路径';
+  String get sActionSwitchPathLabel => '切换相册';
   @override
-  String get sActionUseCameraHint => '使用摄像头';
+  String get sActionUseCameraHint => '拍摄';
   @override
   String get sNameDurationLabel => '时长';
   @override
-  String get sUnitAssetCountLabel => '计数';
+  String get sUnitAssetCountLabel => '项';
+}
+
+// Path: customUi
+class Translations$customUi$zh_CN extends Translations$customUi$en {
+  Translations$customUi$zh_CN.internal(TranslationsZhCn root) : this._root = root, super.internal(root);
+
+  final TranslationsZhCn _root; // ignore: unused_field
+
+  // Translations
+  @override
+  String get homepage => '官方网站';
+  @override
+  String get sourceCodeGithub => '源代码（GitHub）';
+  @override
+  String get sourceCodeCodeberg => '源代码（Codeberg）';
+  @override
+  String get apacheLicense => 'Apache 2.0 许可证';
+  @override
+  String get licenseNotices => '开源许可声明';
+  @override
+  String get debugging => '调试';
+  @override
+  String get debugMode => '调试模式';
+  @override
+  String get portableMode => '便携模式';
+  @override
+  String get executablePath => '程序路径';
+  @override
+  String get workingDirectory => '工作目录';
+  @override
+  String get settingsPath => '设置文件路径';
+  @override
+  String get appArguments => '启动参数';
+  @override
+  String get more => '更多';
+  @override
+  String get security => '安全';
+  @override
+  String get discovery => '设备发现';
+  @override
+  String get httpLogs => 'HTTP 日志';
+  @override
+  String get refenaTracing => 'Refena 跟踪';
+  @override
+  String get clearSettings => '清除设置';
+  @override
+  String get securityDebugging => '安全调试';
+  @override
+  String get reset => '重置';
+  @override
+  String get certificateFingerprint => '证书指纹（SHA-256）';
+  @override
+  String get certificate => '证书';
+  @override
+  String get privateKey => '私钥';
+  @override
+  String get publicKey => '公钥';
+  @override
+  String get discoveryDebugging => '设备发现调试';
+  @override
+  String get announce => '广播设备信息';
+  @override
+  String get clear => '清空日志';
+  @override
+  String get initializationError => 'LocalSend：启动失败';
+  @override
+  String get errorPrefix => '错误';
+  @override
+  String get booleanTrue => '是';
+  @override
+  String get booleanFalse => '否';
+  @override
+  String get defaultValue => '默认';
+  @override
+  String get translationCredit => '翻译 by HaoH';
 }
 
 // Path: receiveTab.infoBox
@@ -865,7 +942,7 @@ class Translations$receiveTab$quickSave$zh_CN extends Translations$receiveTab$qu
   @override
   String get off => _root.general.off;
   @override
-  String get favorites => '收藏夹';
+  String get favorites => '仅收藏设备';
   @override
   String get on => _root.general.on;
 }
@@ -878,7 +955,7 @@ class Translations$sendTab$selection$zh_CN extends Translations$sendTab$selectio
 
   // Translations
   @override
-  String get title => '选择';
+  String get title => '已选内容';
   @override
   String files({required Object files}) => '文件：${files}';
   @override
@@ -903,7 +980,7 @@ class Translations$sendTab$picker$zh_CN extends Translations$sendTab$picker$en {
   @override
   String get app => '应用';
   @override
-  String get clipboard => '剪贴板';
+  String get clipboard => '粘贴';
 }
 
 // Path: sendTab.sendModes
@@ -914,7 +991,7 @@ class Translations$sendTab$sendModes$zh_CN extends Translations$sendTab$sendMode
 
   // Translations
   @override
-  String get single => '一个接收者';
+  String get single => '单个接收者';
   @override
   String get multiple => '多个接收者';
   @override
@@ -950,13 +1027,17 @@ class Translations$settingsTab$general$zh_CN extends Translations$settingsTab$ge
   @override
   String get saveWindowPlacementWindows => '退出时保存窗口位置';
   @override
+  String get alwaysOnTop => '窗口置顶';
+  @override
+  String get alwaysOnTopUnavailable => 'Wayland 不支持此功能';
+  @override
   String get minimizeToTray => '关闭时最小化到系统托盘';
   @override
-  String get launchAtStartup => '登录系统后自动启动程序';
+  String get launchAtStartup => '登录后自动启动';
   @override
   String get launchMinimized => '自动启动时隐藏窗口';
   @override
-  String get showInContextMenu => '在“发送到...”文件菜单中显示 LocalSend';
+  String get showInContextMenu => '在右键菜单中显示 LocalSend';
   @override
   String get animations => '动画效果';
 }
@@ -977,17 +1058,17 @@ class Translations$settingsTab$receive$zh_CN extends Translations$settingsTab$re
   @override
   String get requirePin => _root.webSharePage.requirePin;
   @override
-  String get autoFinish => '自动完成传输任务';
+  String get autoFinish => '传输完成后自动返回';
   @override
   String get destination => '保存目录';
   @override
-  String get downloads => '(下载)';
+  String get downloads => '（下载）';
   @override
-  String get saveToGallery => '保存到相册';
+  String get saveToGallery => '将照片和视频保存到相册';
   @override
-  String get saveToHistory => '保存到历史记录';
+  String get saveToHistory => '记录接收历史';
   @override
-  String get verifyChecksums => '接收文件时验证校验和';
+  String get verifyChecksums => '接收时校验文件完整性';
 }
 
 // Path: settingsTab.send
@@ -1000,9 +1081,9 @@ class Translations$settingsTab$send$zh_CN extends Translations$settingsTab$send$
   @override
   String get title => '发送';
   @override
-  String get shareViaLinkAutoAccept => '通过链接分享：自动同意接收请求';
+  String get shareViaLinkAutoAccept => '通过链接分享时自动接受下载请求';
   @override
-  String get createChecksums => '发送文件时创建校验和';
+  String get createChecksums => '发送时生成文件校验和';
 }
 
 // Path: settingsTab.network
@@ -1015,9 +1096,9 @@ class Translations$settingsTab$network$zh_CN extends Translations$settingsTab$ne
   @override
   String get title => '网络';
   @override
-  String get needRestart => '重启服务器后生效！';
+  String get needRestart => '重启服务后生效。';
   @override
-  String get server => '服务器';
+  String get server => '传输服务';
   @override
   String get alias => '设备名称';
   @override
@@ -1033,19 +1114,19 @@ class Translations$settingsTab$network$zh_CN extends Translations$settingsTab$ne
     _root,
   );
   @override
-  String get discoveryTimeout => '搜索设备超时';
+  String get discoveryTimeout => '设备搜索超时时间';
   @override
-  String get useSystemName => '使用系统名称';
+  String get useSystemName => '使用系统设备名称';
   @override
-  String get generateRandomAlias => '生成随机昵称';
+  String get generateRandomAlias => '随机生成设备名称';
   @override
-  String portWarning({required Object defaultPort}) => '由于正在使用自定义端口，你可能不会被其他设备检测到。（默认端口：${defaultPort}）';
+  String portWarning({required Object defaultPort}) => '使用自定义端口可能导致其他设备找不到本机。（默认端口：${defaultPort}）';
   @override
   String get encryption => '加密';
   @override
-  String get multicastGroup => '多播';
+  String get multicastGroup => '多播地址';
   @override
-  String multicastGroupWarning({required Object defaultMulticast}) => '由于正在使用自定义多播地址，你可能不会被其他设备检测到。（默认地址：${defaultMulticast}）';
+  String multicastGroupWarning({required Object defaultMulticast}) => '使用自定义多播地址可能导致其他设备找不到本机。（默认地址：${defaultMulticast}）';
 }
 
 // Path: settingsTab.other
@@ -1075,9 +1156,9 @@ class Translations$troubleshootPage$firewall$zh_CN extends Translations$troubles
 
   // Translations
   @override
-  String get symptom => '此设备可以发送文件至其他设备，但其它设备无法发送文件到此设备。';
+  String get symptom => '本机能向其他设备发送文件，但无法接收文件。';
   @override
-  String solution({required Object port}) => '这最可能是由防火墙规则设定引起的。你可以通过在端口 ${port} 上允许（UDP 和 TCP 的）传入请求来解决这个问题。';
+  String solution({required Object port}) => '可能是防火墙拦截了连接。请允许端口 ${port} 的 TCP 和 UDP 入站连接。';
   @override
   String get openFirewall => '打开防火墙';
 }
@@ -1090,9 +1171,9 @@ class Translations$troubleshootPage$noDiscovery$zh_CN extends Translations$troub
 
   // Translations
   @override
-  String get symptom => '此设备未能发现其他设备。';
+  String get symptom => '本机找不到其他设备。';
   @override
-  String get solution => '确保所有设备都处于同一个 Wi‑Fi 网络上，且共享相同的网络配置（端口、多播地址、加密选项）。您可以尝试手动输入目标设备的 IP 地址。如果起到了效果，请考虑将此设备添加到收藏夹中，以便将来可以自动发现。';
+  String get solution => '请确认所有设备连接到同一个 Wi-Fi 网络，且端口、多播地址和加密设置一致。也可以手动输入接收设备的 IP 地址。连接成功后，可将该设备加入收藏，方便下次查找。';
 }
 
 // Path: troubleshootPage.noConnection
@@ -1103,9 +1184,9 @@ class Translations$troubleshootPage$noConnection$zh_CN extends Translations$trou
 
   // Translations
   @override
-  String get symptom => '双方设备均无法发现对方或者分享文件。';
+  String get symptom => '两台设备互相找不到，也无法传输文件。';
   @override
-  String get solution => '当问题发生在双方设备上时，请先确认双方设备处于同一个 Wi‑Fi 网络上，且共享相同的网络配置（端口、多播地址、加密选项）。若因 Wi‑Fi 不允许参与者间通信，那么请在路由器中关闭“接入点(AP)隔离”选项。';
+  String get solution => '请确认两台设备连接到同一个 Wi-Fi 网络，且端口、多播地址和加密设置一致。如果路由器开启了“接入点隔离（AP 隔离）”，同一网络中的设备也可能无法互相通信，请在路由器设置中关闭该选项。';
 }
 
 // Path: receiveHistoryPage.entryActions
@@ -1120,7 +1201,7 @@ class Translations$receiveHistoryPage$entryActions$zh_CN extends Translations$re
   @override
   String get showInFolder => '在文件管理器中显示';
   @override
-  String get info => '信息';
+  String get info => '文件信息';
   @override
   String get deleteFromHistory => '从历史记录中删除';
 }
@@ -1152,11 +1233,11 @@ class Translations$deviceDetailsPage$logs$zh_CN extends Translations$deviceDetai
   @override
   String get title => '日志';
   @override
-  String get empty => '没有可用的日志。';
+  String get empty => '暂无日志。';
   @override
-  String discovered({required Object protocol, required Object host}) => '通过 ${protocol} 发现 (${host})';
+  String discovered({required Object protocol, required Object host}) => '通过 ${protocol} 发现设备（${host}）';
   @override
-  String updated({required Object protocol, required Object host}) => '通过 ${protocol} 更新 (${host})';
+  String updated({required Object protocol, required Object host}) => '通过 ${protocol} 更新设备信息（${host}）';
 }
 
 // Path: progressPage.total
@@ -1221,7 +1302,7 @@ class Translations$dialogs$addFile$zh_CN extends Translations$dialogs$addFile$en
   @override
   String get title => '添加文件';
   @override
-  String get content => '你想添加什么文件？';
+  String get content => '选择要添加的内容。';
 }
 
 // Path: dialogs.openFile
@@ -1234,7 +1315,7 @@ class Translations$dialogs$openFile$zh_CN extends Translations$dialogs$openFile$
   @override
   String get title => '打开文件';
   @override
-  String get content => '您是否要打开接收的文件？';
+  String get content => '要打开刚收到的文件吗？';
 }
 
 // Path: dialogs.addressInput
@@ -1251,7 +1332,7 @@ class Translations$dialogs$addressInput$zh_CN extends Translations$dialogs$addre
   @override
   String get ip => 'IP 地址';
   @override
-  String get recentlyUsed => '最近使用： ';
+  String get recentlyUsed => '最近使用：';
 }
 
 // Path: dialogs.cancelSession
@@ -1277,7 +1358,7 @@ class Translations$dialogs$cannotOpenFile$zh_CN extends Translations$dialogs$can
   @override
   String get title => '无法打开文件';
   @override
-  String content({required Object file}) => '无法打开 “${file}”。这个文件是否已被移动、重命名或删除？';
+  String content({required Object file}) => '无法打开“${file}”。请确认文件是否已被移动、重命名或删除。';
 }
 
 // Path: dialogs.encryptionDisabledNotice
@@ -1312,11 +1393,11 @@ class Translations$dialogs$favoriteDialog$zh_CN extends Translations$dialogs$fav
 
   // Translations
   @override
-  String get title => '收藏夹';
+  String get title => '收藏设备';
   @override
   String get noFavorites => '还没有收藏的设备。';
   @override
-  String get addFavorite => '新建';
+  String get addFavorite => '添加设备';
 }
 
 // Path: dialogs.favoriteDeleteDialog
@@ -1327,9 +1408,9 @@ class Translations$dialogs$favoriteDeleteDialog$zh_CN extends Translations$dialo
 
   // Translations
   @override
-  String get title => '删除收藏';
+  String get title => '取消收藏';
   @override
-  String content({required Object name}) => '确定要取消收藏 “${name}” 吗?';
+  String content({required Object name}) => '要取消收藏“${name}”吗？';
 }
 
 // Path: dialogs.favoriteEditDialog
@@ -1340,13 +1421,13 @@ class Translations$dialogs$favoriteEditDialog$zh_CN extends Translations$dialogs
 
   // Translations
   @override
-  String get titleAdd => '添加到收藏夹';
+  String get titleAdd => '添加收藏设备';
   @override
-  String get titleEdit => '设置';
+  String get titleEdit => '编辑收藏设备';
   @override
   String get name => '名称';
   @override
-  String get auto => '(自动)';
+  String get auto => '（自动）';
   @override
   String get ip => 'IP 地址';
   @override
@@ -1410,9 +1491,9 @@ class Translations$dialogs$localNetworkUnauthorized$zh_CN extends Translations$d
   @override
   String get title => _root.dialogs.noPermission.title;
   @override
-  String get description => 'LocalSend 在没有扫描本地网络的权限的情况下无法找到其他设备。请在设置中授予此权限。';
+  String get description => '需要本地网络权限才能查找附近设备。请前往系统设置，允许 LocalSend 访问本地网络。';
   @override
-  String get gotoSettings => '设置';
+  String get gotoSettings => '前往设置';
 }
 
 // Path: dialogs.messageInput
@@ -1449,9 +1530,9 @@ class Translations$dialogs$noPermission$zh_CN extends Translations$dialogs$noPer
 
   // Translations
   @override
-  String get title => '没有权限';
+  String get title => '需要访问权限';
   @override
-  String get content => '您尚未授予必要的权限。请在设置中授予权限。';
+  String get content => '尚未获得所需的访问权限，请前往系统设置授权。';
 }
 
 // Path: dialogs.notAvailableOnPlatform
@@ -1464,7 +1545,7 @@ class Translations$dialogs$notAvailableOnPlatform$zh_CN extends Translations$dia
   @override
   String get title => '不可用';
   @override
-  String get content => '此功能只在以下平台可用：';
+  String get content => '此功能仅支持以下平台：';
 }
 
 // Path: dialogs.qr
@@ -1488,15 +1569,15 @@ class Translations$dialogs$quickActions$zh_CN extends Translations$dialogs$quick
   @override
   String get title => '快速操作';
   @override
-  String get counter => '计数器';
+  String get counter => '按序号命名';
   @override
   String get prefix => '前缀';
   @override
-  String get padZero => '以零填充';
+  String get padZero => '序号前补零';
   @override
-  String get sortBeforeCount => '事先以字母顺序排序';
+  String get sortBeforeCount => '编号前按字母排序（A–Z）';
   @override
-  String get random => '随机';
+  String get random => '随机命名';
 }
 
 // Path: dialogs.quickSaveNotice
@@ -1509,7 +1590,7 @@ class Translations$dialogs$quickSaveNotice$zh_CN extends Translations$dialogs$qu
   @override
   String get title => _root.general.quickSave;
   @override
-  String get content => '自动接受所有文件传输请求。请注意，这会让此网络中的所有人都可以向你发送文件。';
+  String get content => '已开启自动接收。同一局域网中的任何设备都可以向本机发送文件，无需逐次确认。';
 }
 
 // Path: dialogs.quickSaveFromFavoritesNotice
@@ -1523,7 +1604,7 @@ class Translations$dialogs$quickSaveFromFavoritesNotice$zh_CN extends Translatio
   String get title => _root.general.quickSaveFromFavorites;
   @override
   List<String> get content => [
-    '当前会自动接受收藏夹中设备的文件请求。',
+    '已开启自动接收收藏设备的文件，无需逐次确认。',
   ];
 }
 
@@ -1535,7 +1616,7 @@ class Translations$dialogs$pin$zh_CN extends Translations$dialogs$pin$en {
 
   // Translations
   @override
-  String get title => '输入 PIN';
+  String get title => '输入 PIN 码';
 }
 
 // Path: dialogs.sendModeHelp
@@ -1548,11 +1629,11 @@ class Translations$dialogs$sendModeHelp$zh_CN extends Translations$dialogs$sendM
   @override
   String get title => '发送模式';
   @override
-  String get single => '发送文件给一个接收者。已选择的文件在发送后会取消选择。';
+  String get single => '发送给一个接收者。传输完成后会清空已选内容。';
   @override
-  String get multiple => '发送文件给多个接收者。已选择的文件在发送后不会取消选择。';
+  String get multiple => '发送给多个接收者。传输完成后保留已选内容，方便继续发送。';
   @override
-  String get link => '未安装 LocalSend 的接收者可以在浏览器中打开链接以下载选中的文件。';
+  String get link => '接收者无需安装 LocalSend，在浏览器中打开链接即可下载所选文件。';
 }
 
 // Path: dialogs.zoom
@@ -1563,7 +1644,7 @@ class Translations$dialogs$zoom$zh_CN extends Translations$dialogs$zoom$en {
 
   // Translations
   @override
-  String get title => 'URL';
+  String get title => '链接地址';
 }
 
 // Path: settingsTab.general.brightnessOptions
@@ -1591,7 +1672,7 @@ class Translations$settingsTab$general$colorOptions$zh_CN extends Translations$s
   @override
   String get system => '跟随系统';
   @override
-  String get oled => 'OLED';
+  String get oled => '纯黑（OLED）';
   @override
   String get custom => '自定义';
 }
@@ -1615,9 +1696,9 @@ class Translations$settingsTab$network$networkOptions$zh_CN extends Translations
 
   // Translations
   @override
-  String get all => '所有';
+  String get all => '全部网络接口';
   @override
-  String get filtered => '已过滤';
+  String get filtered => '已筛选的网络接口';
 }
 
 // Path: progressPage.total.title
@@ -1628,9 +1709,9 @@ class Translations$progressPage$total$title$zh_CN extends Translations$progressP
 
   // Translations
   @override
-  String sending({required Object time}) => '总进度 (${time})';
+  String sending({required Object time}) => '总进度（${time}）';
   @override
-  String get finishedError => '已完成，但发生错误';
+  String get finishedError => '传输结束，但发生错误';
   @override
   String get canceledSender => '发送者已取消';
   @override
@@ -1646,8 +1727,8 @@ class Translations$whatsNewPage$changes$v1_18_0$zh_CN extends Translations$whats
   // Translations
   @override
   List<String> get changes => [
-    '加密不再减缓传输速度。如果您之前将其关闭，则现在已在此设备上重新启用。',
-    '来自收藏夹的请求现在会被自动接受。这项功能是默认打开的，可以在设置中禁用。',
-    '在Android上，当应用处于后台或屏幕关闭时，传输仍会继续。在iOS上，应用仍必须保持在前台。',
+    '加密不再影响传输速度。如果之前关闭了加密，本次更新会在本机重新开启。',
+    '默认自动接收收藏设备的传输请求，可在设置中关闭。',
+    'Android 支持在后台或锁屏后继续传输；iOS 仍需保持应用在前台运行。',
   ];
 }

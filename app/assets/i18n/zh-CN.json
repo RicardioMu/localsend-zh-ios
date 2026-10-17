@@ -26,10 +26,10 @@
     "online": "在线",
     "open": "打开",
     "queue": "队列",
-    "quickSave": "自动保存",
-    "quickSaveFromFavorites": "自动保存来自“收藏夹(白名单)”设备的文件",
-    "renamed": "重命名成功",
-    "reset": "重置",
+    "quickSave": "自动接收",
+    "quickSaveFromFavorites": "自动接收收藏设备的文件",
+    "renamed": "已重命名",
+    "reset": "撤销更改",
     "restart": "重启",
     "settings": "设置",
     "skipped": "已跳过",
@@ -49,7 +49,7 @@
     },
     "quickSave": {
       "off": "@:general.off",
-      "favorites": "收藏夹",
+      "favorites": "仅收藏设备",
       "on": "@:general.on"
     },
     "link": "通过链接接收"
@@ -57,7 +57,7 @@
   "sendTab": {
     "title": "发送",
     "selection": {
-      "title": "选择",
+      "title": "已选内容",
       "files": "文件：{files}",
       "size": "大小：{size}"
     },
@@ -67,22 +67,22 @@
       "media": "媒体",
       "text": "文本",
       "app": "应用",
-      "clipboard": "剪贴板"
+      "clipboard": "粘贴"
     },
-    "shareIntentInfo": "你也可以通过移动设备中的“分享”功能更简单地发送文件。",
+    "shareIntentInfo": "也可以使用手机的“分享”功能选择要发送的文件。",
     "nearbyDevices": "附近的设备",
-    "thisDevice": "这台设备",
-    "scan": "扫描设备",
+    "thisDevice": "本机",
+    "scan": "搜索设备",
     "manualSending": "手动发送",
     "sendMode": "发送模式",
     "sendModes": {
-      "single": "一个接收者",
+      "single": "单个接收者",
       "multiple": "多个接收者",
       "link": "通过链接分享"
     },
-    "sendModeHelp": "提示",
-    "help": "请确保目标连接到同一个 Wi‑Fi 网络。",
-    "placeItems": "列出要分享的项目。"
+    "sendModeHelp": "模式说明",
+    "help": "请确保接收设备也连接到同一个 Wi-Fi 网络。",
+    "placeItems": "添加要分享的文件或文字。"
   },
   "settingsTab": {
     "title": "设置",
@@ -97,7 +97,7 @@
       "color": "颜色",
       "colorOptions": {
         "system": "跟随系统",
-        "oled": "OLED",
+        "oled": "纯黑（OLED）",
         "custom": "自定义"
       },
       "language": "语言",
@@ -106,10 +106,12 @@
       },
       "saveWindowPlacement": "退出时保存窗口位置",
       "saveWindowPlacementWindows": "退出时保存窗口位置",
+      "alwaysOnTop": "窗口置顶",
+      "alwaysOnTopUnavailable": "Wayland 不支持此功能",
       "minimizeToTray": "关闭时最小化到系统托盘",
-      "launchAtStartup": "登录系统后自动启动程序",
+      "launchAtStartup": "登录后自动启动",
       "launchMinimized": "自动启动时隐藏窗口",
-      "showInContextMenu": "在“发送到...”文件菜单中显示 LocalSend",
+      "showInContextMenu": "在右键菜单中显示 LocalSend",
       "animations": "动画效果"
     },
     "receive": {
@@ -117,38 +119,38 @@
       "quickSave": "@:general.quickSave",
       "quickSaveFromFavorites": "@:general.quickSaveFromFavorites",
       "requirePin": "@:webSharePage.requirePin",
-      "autoFinish": "自动完成传输任务",
+      "autoFinish": "传输完成后自动返回",
       "destination": "保存目录",
-      "downloads": "(下载)",
-      "saveToGallery": "保存到相册",
-      "saveToHistory": "保存到历史记录",
-      "verifyChecksums": "接收文件时验证校验和"
+      "downloads": "（下载）",
+      "saveToGallery": "将照片和视频保存到相册",
+      "saveToHistory": "记录接收历史",
+      "verifyChecksums": "接收时校验文件完整性"
     },
     "send": {
       "title": "发送",
-      "shareViaLinkAutoAccept": "通过链接分享：自动同意接收请求",
-      "createChecksums": "发送文件时创建校验和"
+      "shareViaLinkAutoAccept": "通过链接分享时自动接受下载请求",
+      "createChecksums": "发送时生成文件校验和"
     },
     "network": {
       "title": "网络",
-      "needRestart": "重启服务器后生效！",
-      "server": "服务器",
+      "needRestart": "重启服务后生效。",
+      "server": "传输服务",
       "alias": "设备名称",
       "deviceType": "设备类型",
       "deviceModel": "设备型号",
       "port": "端口",
       "network": "网络",
       "networkOptions": {
-        "all": "所有",
-        "filtered": "已过滤"
+        "all": "全部网络接口",
+        "filtered": "已筛选的网络接口"
       },
-      "discoveryTimeout": "搜索设备超时",
-      "useSystemName": "使用系统名称",
-      "generateRandomAlias": "生成随机昵称",
-      "portWarning": "由于正在使用自定义端口，你可能不会被其他设备检测到。（默认端口：{defaultPort}）",
+      "discoveryTimeout": "设备搜索超时时间",
+      "useSystemName": "使用系统设备名称",
+      "generateRandomAlias": "随机生成设备名称",
+      "portWarning": "使用自定义端口可能导致其他设备找不到本机。（默认端口：{defaultPort}）",
       "encryption": "加密",
-      "multicastGroup": "多播",
-      "multicastGroupWarning": "由于正在使用自定义多播地址，你可能不会被其他设备检测到。（默认地址：{defaultMulticast}）"
+      "multicastGroup": "多播地址",
+      "multicastGroupWarning": "使用自定义多播地址可能导致其他设备找不到本机。（默认地址：{defaultMulticast}）"
     },
     "other": {
       "title": "其他",
@@ -161,39 +163,39 @@
   },
   "troubleshootPage": {
     "title": "故障排除",
-    "subTitle": "应用没有按预期工作？您可以在这里找到常用解决方案。",
+    "subTitle": "无法发现设备或传输文件？可以尝试以下解决方法。",
     "solution": "解决方案：",
     "fixButton": "自动修复",
     "firewall": {
-      "symptom": "此设备可以发送文件至其他设备，但其它设备无法发送文件到此设备。",
-      "solution": "这最可能是由防火墙规则设定引起的。你可以通过在端口 {port} 上允许（UDP 和 TCP 的）传入请求来解决这个问题。",
+      "symptom": "本机能向其他设备发送文件，但无法接收文件。",
+      "solution": "可能是防火墙拦截了连接。请允许端口 {port} 的 TCP 和 UDP 入站连接。",
       "openFirewall": "打开防火墙"
     },
     "noDiscovery": {
-      "symptom": "此设备未能发现其他设备。",
-      "solution": "确保所有设备都处于同一个 Wi‑Fi 网络上，且共享相同的网络配置（端口、多播地址、加密选项）。您可以尝试手动输入目标设备的 IP 地址。如果起到了效果，请考虑将此设备添加到收藏夹中，以便将来可以自动发现。"
+      "symptom": "本机找不到其他设备。",
+      "solution": "请确认所有设备连接到同一个 Wi-Fi 网络，且端口、多播地址和加密设置一致。也可以手动输入接收设备的 IP 地址。连接成功后，可将该设备加入收藏，方便下次查找。"
     },
     "noConnection": {
-      "symptom": "双方设备均无法发现对方或者分享文件。",
-      "solution": "当问题发生在双方设备上时，请先确认双方设备处于同一个 Wi‑Fi 网络上，且共享相同的网络配置（端口、多播地址、加密选项）。若因 Wi‑Fi 不允许参与者间通信，那么请在路由器中关闭“接入点(AP)隔离”选项。"
+      "symptom": "两台设备互相找不到，也无法传输文件。",
+      "solution": "请确认两台设备连接到同一个 Wi-Fi 网络，且端口、多播地址和加密设置一致。如果路由器开启了“接入点隔离（AP 隔离）”，同一网络中的设备也可能无法互相通信，请在路由器设置中关闭该选项。"
     }
   },
   "networkInterfacesPage": {
     "title": "网络接口",
-    "info": "默认情况下，LocalSend 使用所有可用的网络接口。您可以在此处排除不需要的网络接口。您需要重新启动服务器以应用更改。",
+    "info": "LocalSend 默认使用所有可用的网络接口。可以在这里排除不需要的接口，更改将在重启传输服务后生效。",
     "preview": "预览",
-    "whitelist": "白名单",
-    "blacklist": "黑名单"
+    "whitelist": "允许列表",
+    "blacklist": "排除列表"
   },
   "receiveHistoryPage": {
-    "title": "历史",
-    "openFolder": "打开目录",
+    "title": "接收记录",
+    "openFolder": "打开文件夹",
     "deleteHistory": "删除历史记录",
-    "empty": "无历史记录。",
+    "empty": "暂无接收记录。",
     "entryActions": {
       "open": "打开文件",
       "showInFolder": "在文件管理器中显示",
-      "info": "信息",
+      "info": "文件信息",
       "deleteFromHistory": "从历史记录中删除"
     }
   },
@@ -204,7 +206,7 @@
     "apps": "{n} 个应用"
   },
   "selectedFilesPage": {
-    "deleteAll": "全部删除"
+    "deleteAll": "清空选择"
   },
   "deviceDetailsPage": {
     "title": "设备详情",
@@ -218,36 +220,36 @@
     },
     "logs": {
       "title": "日志",
-      "empty": "没有可用的日志。",
-      "discovered": "通过 {protocol} 发现 ({host})",
-      "updated": "通过 {protocol} 更新 ({host})"
+      "empty": "暂无日志。",
+      "discovered": "通过 {protocol} 发现设备（{host}）",
+      "updated": "通过 {protocol} 更新设备信息（{host}）"
     }
   },
   "verifyPage": {
     "title": "验证",
     "icons": "图标",
     "text": "文本",
-    "question": "在另一台设备上显示的内容相同吗？"
+    "question": "两台设备显示的内容是否一致？"
   },
   "receivePage": {
     "subTitle": {
-      "one": "想要发送给你一个文件",
-      "other": "想要发送给你 {n} 个文件"
+      "one": "想向你发送 1 个文件",
+      "other": "想向你发送 {n} 个文件"
     },
-    "subTitleMessage": "发送给你了一条消息：",
-    "subTitleLink": "发送给你了一个链接：",
+    "subTitleMessage": "向你发送了一条消息：",
+    "subTitleLink": "向你发送了一个链接：",
     "canceled": "发送者取消了请求。"
   },
   "receiveOptionsPage": {
-    "title": "设置",
+    "title": "接收选项",
     "destination": "@:settingsTab.receive.destination",
-    "appDirectory": "(LocalSend 文件夹)",
+    "appDirectory": "（LocalSend 文件夹）",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
-    "saveToGalleryOff": "由于分享内容中存在文件夹，已自动关闭。"
+    "saveToGalleryOff": "分享内容包含文件夹，已关闭保存到相册。"
   },
   "sendPage": {
     "calculatingChecksum": "正在计算校验和（{curr} / {n}）",
-    "waiting": "等待响应中……",
+    "waiting": "正在等待对方响应…",
     "rejected": "对方拒绝了请求。",
     "tooManyAttempts": "@:web.tooManyAttempts",
     "busy": "对方正在处理另一个请求。"
@@ -258,8 +260,8 @@
     "savedToGallery": "已保存到相册",
     "total": {
       "title": {
-        "sending": "总进度 ({time})",
-        "finishedError": "已完成，但发生错误",
+        "sending": "总进度（{time}）",
+        "finishedError": "传输结束，但发生错误",
         "canceledSender": "发送者已取消",
         "canceledReceiver": "接收者已取消"
       },
@@ -279,21 +281,21 @@
     }
   },
   "webSharePage": {
-    "title": "分享为链接",
-    "loading": "正在启动服务器……",
-    "stopping": "正在停止服务器……",
-    "error": "在启动服务器过程中发生了错误。",
+    "title": "通过链接分享",
+    "loading": "正在启动分享服务…",
+    "stopping": "正在停止分享服务…",
+    "error": "无法启动分享服务。",
     "openLink": {
       "one": "在浏览器中打开链接：",
       "other": "在浏览器中打开其中一个链接："
     },
     "requests": "请求",
-    "noRequests": "尚无请求。",
+    "noRequests": "暂无下载请求。",
     "encryption": "@:settingsTab.network.encryption",
     "autoAccept": "自动接受请求",
-    "requirePin": "启用 PIN 密码",
-    "pinHint": "PIN 为 “{pin}”",
-    "encryptionHint": "LocalSend 使用自签名证书。您需要在浏览器中允许它。",
+    "requirePin": "需要 PIN 码",
+    "pinHint": "PIN 码：{pin}",
+    "encryptionHint": "LocalSend 使用自签名证书，需要在浏览器中确认信任后才能访问。",
     "pendingRequests": "待处理请求：{n}"
   },
   "webReceivePage": {
@@ -302,32 +304,32 @@
   "aboutPage": {
     "title": "关于 LocalSend",
     "description": [
-      "LocalSend 是一款免费的开源应用程序，可让您通过本地网络与附近的设备安全地分享文件和信息，而无需互联网连接。",
-      "本程序可在 Android、iOS、macOS、Windows 和 Linux 上使用。您可以在官方主页找到所有下载选项。"
+      "LocalSend 是一款免费开源应用，可通过局域网与附近设备安全地分享文件和消息，无需连接互联网。",
+      "支持 Android、iOS、macOS、Windows 和 Linux。各平台下载地址请见官方网站。"
     ],
     "author": "作者",
     "contributors": "贡献者",
-    "packagers": "打包者",
-    "translators": "翻译者"
+    "packagers": "打包维护者",
+    "translators": "翻译贡献者"
   },
   "donationPage": {
     "title": "捐赠",
-    "info": "LocalSend 免费、开源、无广告。如果您喜欢这款应用程序，可以捐款支持开发。",
+    "info": "LocalSend 免费、开源、无广告。如果喜欢这款应用，可以捐赠支持后续开发。",
     "donate": "捐款 {amount}",
-    "thanks": "非常感谢您的支持！",
+    "thanks": "感谢你的支持！",
     "restore": "恢复购买"
   },
   "changelogPage": {
     "title": "更新日志"
   },
   "whatsNewPage": {
-    "title": "{version} 中的新增功能",
+    "title": "{version} 更新内容",
     "changes(interface=WhatsNewStrings)": {
       "v1_18_0": {
         "changes": [
-          "加密不再减缓传输速度。如果您之前将其关闭，则现在已在此设备上重新启用。",
-          "来自收藏夹的请求现在会被自动接受。这项功能是默认打开的，可以在设置中禁用。",
-          "在Android上，当应用处于后台或屏幕关闭时，传输仍会继续。在iOS上，应用仍必须保持在前台。"
+          "加密不再影响传输速度。如果之前关闭了加密，本次更新会在本机重新开启。",
+          "默认自动接收收藏设备的传输请求，可在设置中关闭。",
+          "Android 支持在后台或锁屏后继续传输；iOS 仍需保持应用在前台运行。"
         ]
       }
     }
@@ -407,17 +409,17 @@
   "dialogs": {
     "addFile": {
       "title": "添加文件",
-      "content": "你想添加什么文件？"
+      "content": "选择要添加的内容。"
     },
     "openFile": {
       "title": "打开文件",
-      "content": "您是否要打开接收的文件？"
+      "content": "要打开刚收到的文件吗？"
     },
     "addressInput": {
       "title": "输入地址",
       "hashtag": "标签",
       "ip": "IP 地址",
-      "recentlyUsed": "最近使用： "
+      "recentlyUsed": "最近使用："
     },
     "cancelSession": {
       "title": "取消文件传输",
@@ -425,7 +427,7 @@
     },
     "cannotOpenFile": {
       "title": "无法打开文件",
-      "content": "无法打开 “{file}”。这个文件是否已被移动、重命名或删除？"
+      "content": "无法打开“{file}”。请确认文件是否已被移动、重命名或删除。"
     },
     "encryptionDisabledNotice": {
       "title": "加密已关闭",
@@ -435,19 +437,19 @@
       "title": "@:general.error"
     },
     "favoriteDialog": {
-      "title": "收藏夹",
+      "title": "收藏设备",
       "noFavorites": "还没有收藏的设备。",
-      "addFavorite": "新建"
+      "addFavorite": "添加设备"
     },
     "favoriteDeleteDialog": {
-      "title": "删除收藏",
-      "content": "确定要取消收藏 “{name}” 吗?"
+      "title": "取消收藏",
+      "content": "要取消收藏“{name}”吗？"
     },
     "favoriteEditDialog": {
-      "titleAdd": "添加到收藏夹",
-      "titleEdit": "设置",
+      "titleAdd": "添加收藏设备",
+      "titleEdit": "编辑收藏设备",
       "name": "名称",
-      "auto": "(自动)",
+      "auto": "（自动）",
       "ip": "IP 地址",
       "port": "端口"
     },
@@ -469,8 +471,8 @@
     },
     "localNetworkUnauthorized": {
       "title": "@:dialogs.noPermission.title",
-      "description": "LocalSend 在没有扫描本地网络的权限的情况下无法找到其他设备。请在设置中授予此权限。",
-      "gotoSettings": "设置"
+      "description": "需要本地网络权限才能查找附近设备。请前往系统设置，允许 LocalSend 访问本地网络。",
+      "gotoSettings": "前往设置"
     },
     "messageInput": {
       "title": "输入消息",
@@ -481,45 +483,45 @@
       "content": "请至少选择一个文件。"
     },
     "noPermission": {
-      "title": "没有权限",
-      "content": "您尚未授予必要的权限。请在设置中授予权限。"
+      "title": "需要访问权限",
+      "content": "尚未获得所需的访问权限，请前往系统设置授权。"
     },
     "notAvailableOnPlatform": {
       "title": "不可用",
-      "content": "此功能只在以下平台可用："
+      "content": "此功能仅支持以下平台："
     },
     "qr": {
       "title": "二维码"
     },
     "quickActions": {
       "title": "快速操作",
-      "counter": "计数器",
+      "counter": "按序号命名",
       "prefix": "前缀",
-      "padZero": "以零填充",
-      "sortBeforeCount": "事先以字母顺序排序",
-      "random": "随机"
+      "padZero": "序号前补零",
+      "sortBeforeCount": "编号前按字母排序（A–Z）",
+      "random": "随机命名"
     },
     "quickSaveNotice": {
       "title": "@:general.quickSave",
-      "content": "自动接受所有文件传输请求。请注意，这会让此网络中的所有人都可以向你发送文件。"
+      "content": "已开启自动接收。同一局域网中的任何设备都可以向本机发送文件，无需逐次确认。"
     },
     "quickSaveFromFavoritesNotice": {
       "title": "@:general.quickSaveFromFavorites",
       "content": [
-        "当前会自动接受收藏夹中设备的文件请求。"
+        "已开启自动接收收藏设备的文件，无需逐次确认。"
       ]
     },
     "pin": {
-      "title": "输入 PIN"
+      "title": "输入 PIN 码"
     },
     "sendModeHelp": {
       "title": "发送模式",
-      "single": "发送文件给一个接收者。已选择的文件在发送后会取消选择。",
-      "multiple": "发送文件给多个接收者。已选择的文件在发送后不会取消选择。",
-      "link": "未安装 LocalSend 的接收者可以在浏览器中打开链接以下载选中的文件。"
+      "single": "发送给一个接收者。传输完成后会清空已选内容。",
+      "multiple": "发送给多个接收者。传输完成后保留已选内容，方便继续发送。",
+      "link": "接收者无需安装 LocalSend，在浏览器中打开链接即可下载所选文件。"
     },
     "zoom": {
-      "title": "URL"
+      "title": "链接地址"
     }
   },
   "sanitization": {
@@ -534,8 +536,8 @@
   },
   "web": {
     "waiting": "@:sendPage.waiting",
-    "enterPin": "输入 PIN",
-    "invalidPin": "PIN 无效",
+    "enterPin": "输入 PIN 码",
+    "invalidPin": "PIN 码不正确",
     "tooManyAttempts": "尝试次数过多",
     "rejected": "已拒绝",
     "files": "文件",
@@ -549,18 +551,18 @@
     "edit": "编辑",
     "gifIndicator": "GIF",
     "loadFailed": "加载失败",
-    "original": "原文件",
+    "original": "原图",
     "preview": "预览",
     "select": "选择",
-    "emptyList": "列表为空",
-    "unSupportedAssetType": "不支持该文件格式",
+    "emptyList": "暂无照片或视频",
+    "unSupportedAssetType": "不支持此文件类型",
     "unableToAccessAll": "无法访问设备上的所有文件",
-    "viewingLimitedAssetsTip": "应用程序仅能查看您允许的文件和相册。",
-    "changeAccessibleLimitedAssets": "点击以更改可访问文件范围",
-    "accessAllTip": "应用程序只能访问设备上的部分文件，请转到系统设置并允许该应用访问设备上的所有媒体文件。",
-    "goToSystemSettings": "转到系统设置",
-    "accessLimitedAssets": "继续受限访问",
-    "accessiblePathName": "可访问的文件",
+    "viewingLimitedAssetsTip": "当前仅显示已授权访问的照片、视频和相册。",
+    "changeAccessibleLimitedAssets": "更改可访问的照片和视频",
+    "accessAllTip": "LocalSend 目前只能访问部分照片和视频。若要选择更多内容，请前往系统设置，允许访问全部照片。",
+    "goToSystemSettings": "前往系统设置",
+    "accessLimitedAssets": "仅使用已授权的照片",
+    "accessiblePathName": "已授权的照片和视频",
     "sTypeAudioLabel": "音频",
     "sTypeImageLabel": "图片",
     "sTypeVideoLabel": "视频",
@@ -568,9 +570,44 @@
     "sActionPlayHint": "播放",
     "sActionPreviewHint": "预览",
     "sActionSelectHint": "选择",
-    "sActionSwitchPathLabel": "更改路径",
-    "sActionUseCameraHint": "使用摄像头",
+    "sActionSwitchPathLabel": "切换相册",
+    "sActionUseCameraHint": "拍摄",
     "sNameDurationLabel": "时长",
-    "sUnitAssetCountLabel": "计数"
+    "sUnitAssetCountLabel": "项"
+  },
+  "customUi": {
+    "homepage": "官方网站",
+    "sourceCodeGithub": "源代码（GitHub）",
+    "sourceCodeCodeberg": "源代码（Codeberg）",
+    "apacheLicense": "Apache 2.0 许可证",
+    "licenseNotices": "开源许可声明",
+    "debugging": "调试",
+    "debugMode": "调试模式",
+    "portableMode": "便携模式",
+    "executablePath": "程序路径",
+    "workingDirectory": "工作目录",
+    "settingsPath": "设置文件路径",
+    "appArguments": "启动参数",
+    "more": "更多",
+    "security": "安全",
+    "discovery": "设备发现",
+    "httpLogs": "HTTP 日志",
+    "refenaTracing": "Refena 跟踪",
+    "clearSettings": "清除设置",
+    "securityDebugging": "安全调试",
+    "reset": "重置",
+    "certificateFingerprint": "证书指纹（SHA-256）",
+    "certificate": "证书",
+    "privateKey": "私钥",
+    "publicKey": "公钥",
+    "discoveryDebugging": "设备发现调试",
+    "announce": "广播设备信息",
+    "clear": "清空日志",
+    "initializationError": "LocalSend：启动失败",
+    "errorPrefix": "错误",
+    "booleanTrue": "是",
+    "booleanFalse": "否",
+    "defaultValue": "默认",
+    "translationCredit": "翻译 by HaoH"
   }
 }

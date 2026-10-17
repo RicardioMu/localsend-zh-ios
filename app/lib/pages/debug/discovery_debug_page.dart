@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:localsend_app/gen/strings.g.dart';
 import 'package:localsend_app/provider/logging/discovery_logs_provider.dart';
 import 'package:localsend_app/provider/network/nearby_devices_provider.dart';
 import 'package:localsend_app/widget/copyable_text.dart';
@@ -17,7 +18,7 @@ class DiscoveryDebugPage extends StatelessWidget {
     final logs = ref.watch(discoveryLoggerProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Discovery Debugging'),
+        title: Text(t.customUi.discoveryDebugging),
       ),
       body: ResponsiveListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -26,12 +27,12 @@ class DiscoveryDebugPage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () => ref.redux(nearbyDevicesProvider).dispatch(StartMulticastScan()),
-                child: const Text('Announce'),
+                child: Text(t.customUi.announce),
               ),
               const SizedBox(width: 20),
               ElevatedButton(
                 onPressed: () => ref.notifier(discoveryLoggerProvider).clear(),
-                child: const Text('Clear'),
+                child: Text(t.customUi.clear),
               ),
             ],
           ),

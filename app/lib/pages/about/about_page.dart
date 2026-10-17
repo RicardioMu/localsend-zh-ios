@@ -36,6 +36,8 @@ class AboutPage extends StatelessWidget {
             '© ${DateTime.now().year} Tien Do Nam',
             textAlign: TextAlign.center,
           ),
+          const SizedBox(height: 8),
+          Text(t.customUi.translationCredit, textAlign: TextAlign.center),
           const SizedBox(height: 10),
           Center(
             child: TextButton(
@@ -139,37 +141,37 @@ class AboutPage extends StatelessWidget {
                 onPressed: () async {
                   await launchUrl(Uri.parse('https://localsend.org'));
                 },
-                child: const Text('Homepage'),
+                child: Text(t.customUi.homepage),
               ),
               TextButton(
                 onPressed: () async {
                   await launchUrl(Uri.parse('https://github.com/localsend/localsend'), mode: LaunchMode.externalApplication);
                 },
-                child: const Text('Source Code (Github)'),
+                child: Text(t.customUi.sourceCodeGithub),
               ),
               TextButton(
                 onPressed: () async {
                   await launchUrl(Uri.parse('https://codeberg.org/localsend/localsend'), mode: LaunchMode.externalApplication);
                 },
-                child: const Text('Source Code (Codeberg)'),
+                child: Text(t.customUi.sourceCodeCodeberg),
               ),
               TextButton(
                 onPressed: () async {
                   await launchUrl(Uri.parse('https://www.apache.org/licenses/LICENSE-2.0'));
                 },
-                child: const Text('Apache License 2.0'),
+                child: Text(t.customUi.apacheLicense),
               ),
               TextButton(
                 onPressed: () async {
                   await context.push(() => const LicensePage());
                 },
-                child: const Text('License Notices'),
+                child: Text(t.customUi.licenseNotices),
               ),
               TextButton(
                 onPressed: () async {
                   await context.push(() => const DebugPage());
                 },
-                child: const Text('Debugging'),
+                child: Text(t.customUi.debugging),
               ),
             ],
           ),
