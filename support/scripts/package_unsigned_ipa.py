@@ -17,7 +17,7 @@ def main():
         raise SystemExit(f"Missing iPhone device build: {app}")
     with (app / "Info.plist").open("rb") as handle:
         info = plistlib.load(handle)
-    subprocess.run(["lipo", "-verify_arch", "arm64", str(app / info["CFBundleExecutable"])], check=True)
+    subprocess.run(["lipo", str(app / info["CFBundleExecutable"]), "-verify_arch", "arm64"], check=True)
     if "iPhoneOS" not in info.get("CFBundleSupportedPlatforms", []):
         raise SystemExit("This app is not an iPhoneOS device build.")
     for relative in [

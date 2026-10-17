@@ -64,6 +64,7 @@ jobs:
           fvm flutter test test/unit/i18n_test.dart
 
       - name: Build unsigned iPhone app
+        id: device-build
         working-directory: app
         run: |
           fvm flutter build ios --release --no-codesign --dart-define=LOCALSEND_DEFAULT_LOCALE=zh-CN
@@ -80,4 +81,15 @@ jobs:
             dist/SHA256SUMS.txt
             dist/build-info.json
           if-no-files-found: error
+          retention-days: 14
+
+      - name: Preserve device build if packaging fails
+        if: failure() && steps.device-build.outcome == 'success'
+        run: tar -czf "$RUNNER_TEMP/localsend-device-app.tar.gz" -C app/build/ios/iphoneos Runner.app
+
+      - uses: actions/upload-artifact@v4
+        if: failure() && steps.device-build.outcome == 'success'
+        with:
+          name: LocalSend-unsigned-device-app-recovery
+          path: ${{ runner.temp }}/localsend-device-app.tar.gz
           retention-days: 14
